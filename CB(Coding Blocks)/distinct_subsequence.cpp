@@ -34,7 +34,7 @@ while(t--){
     for(ll i=1;i<=s1.length();i++){
         dp[i]=dp[i-1]*2;
         if(mp[s1[i-1]-'A']!=-1){
-            dp[i]-=mp[s1[i-1]-'A'];
+            dp[i]-=dp[mp[s1[i-1]-'A']];
         }
         mp[s1[i-1]-'A']=i-1;
     }
