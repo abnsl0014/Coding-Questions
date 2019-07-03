@@ -32,12 +32,12 @@ void reverseStack( stack<int>& s) {
         return;
     }
     ll ele=s.top();
-    cout<<ele<<" .1"<<endl;
+    //cout<<ele<<" .1"<<endl;
     s.pop();
     reverseStack(s);
     reverseStack2(s,ele);
     //s.push(ele);
-    cout<<ele<<" .2"<<endl;
+    //cout<<ele<<" .2"<<endl;
 }
 int main() {
     SPEED
