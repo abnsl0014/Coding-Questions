@@ -16,14 +16,28 @@
 #define mod 1000000007
 using namespace std;
 
+void reverseStack2(stack<int>& s,int x) {
+    if (s.empty()) {
+        s.push(x);
+        return;
+    }
+    ll nw=s.top();
+    s.pop();
+    reverseStack2(s,x);
+    s.push(nw);
+}
+
 void reverseStack( stack<int>& s) {
     if(s.empty()) {
         return;
     }
     ll ele=s.top();
+    cout<<ele<<" .1"<<endl;
     s.pop();
     reverseStack(s);
-    s.push(ele);
+    reverseStack2(s,ele);
+    //s.push(ele);
+    cout<<ele<<" .2"<<endl;
 }
 int main() {
     SPEED

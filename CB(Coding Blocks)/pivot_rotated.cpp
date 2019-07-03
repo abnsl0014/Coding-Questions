@@ -32,7 +32,7 @@ int main(){
             e=mid;
         }
         else{
-            s=mid+1;
+            s=mid+1;gi
         }
     }
     cout<<mid-1<<endl;
