@@ -3,7 +3,7 @@
 #define mp make_pair
 #define ll long long int
 #define fr for(ll i=0;i<n;++i)
-#define in(a,n) double a[n];for(ll i=0;i<n;i++)cin>>a[i];
+#define in(a,n) ll a[n];for(ll i=0;i<n;i++)cin>>a[i];
 #define print(a,n) for(ll i=0;i<n;i++)cout<<a[i]<<' ';br
 #define printv(v) vector<ll> :: iterator it;for(it=v.begin();it!=v.end();it++)cout<<*it<<' ';br
 #define print2(a,b) cout<<a<<' '<<b;br
@@ -17,16 +17,8 @@
 using namespace std;
 int main() {
     SPEED
-    ll n, m, x;
-    double ans = INT_MIN;
-    cin >> n >> x;
-    in(a ,n)
-    sort ( a, a + n );
-    ans = max ( ans , a[0]);
-    ans = max ( ans , x - (double)a[n -1]);
-    for (int i = 0; i < n -1 ; i++) {
-        ans = max ( ans , ( a[i + 1] - a[i] )/2);
-    }
-    cout << setprecision(10)<<ans;
+    ll n, k, l, c, d, p, nl, np;
+    cin >> n >> k >> l >> c >> d >> p >> nl >> np;
+    cout << min(( k * l) / nl, min(c * d, p / np)) / n;
     return 0;
 }
