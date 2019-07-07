@@ -15,29 +15,24 @@
 #define ss second
 #define mod 1000000007
 using namespace std;
+
+bool check(ll n, ll m) {
+     for (ll i = n; i <= m; i++) {
+        for(ll j = i+1; j <= m; j++) {
+            for(ll k =j+1; k <= m; k++) {
+                if(__gcd(i,j)==1 && __gcd(j,k)==1 && __gcd(i,k)!=1) {
+                    cout<<i<<" "<<j<<" "<<k;
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
+}
 int main() {
     SPEED
-    ll n, m, x = 0, g = 0, ans = 0;
+    ll n, m, x = 1, ans;
     cin >> n >> m;
-    if(abs(1-n) > abs(1-m)) x++;
-    else if(abs(1-n) == abs(1-m)) g++;
-    else ans++;
-    if(abs(2-n) > abs(2-m)) x++;
-     else if(abs(2-n) == abs(2-m)) g++;
-    else ans++;
-    if(abs(3-n) > abs(3-m)) x++;
-     else if(abs(3-n) == abs(3-m)) g++;
-    else ans++;
-    if(abs(4-n) > abs(4-m)) x++;
-     else if(abs(4-n) == abs(4-m)) g++;
-    else ans++;
-    if(abs(5-n) > abs(5-m)) x++;
-     else if(abs(5-n) == abs(5-m)) g++;
-    else ans++;
-    if(abs(6-n) > abs(6-m)) x++;
-     else if(abs(6-n) == abs(6-m)) g++;
-    else ans++;
-    
-    cout << ans << " "<<g<<" "<<x;
+    if (check(n,m)) cout<<-1;
     return 0;
 }

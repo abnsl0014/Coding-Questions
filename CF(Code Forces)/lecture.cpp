@@ -17,27 +17,23 @@
 using namespace std;
 int main() {
     SPEED
-    ll n, m, x = 0, g = 0, ans = 0;
+    ll n, m, x, ans;
+    unordered_map< string , string > mp;
     cin >> n >> m;
-    if(abs(1-n) > abs(1-m)) x++;
-    else if(abs(1-n) == abs(1-m)) g++;
-    else ans++;
-    if(abs(2-n) > abs(2-m)) x++;
-     else if(abs(2-n) == abs(2-m)) g++;
-    else ans++;
-    if(abs(3-n) > abs(3-m)) x++;
-     else if(abs(3-n) == abs(3-m)) g++;
-    else ans++;
-    if(abs(4-n) > abs(4-m)) x++;
-     else if(abs(4-n) == abs(4-m)) g++;
-    else ans++;
-    if(abs(5-n) > abs(5-m)) x++;
-     else if(abs(5-n) == abs(5-m)) g++;
-    else ans++;
-    if(abs(6-n) > abs(6-m)) x++;
-     else if(abs(6-n) == abs(6-m)) g++;
-    else ans++;
-    
-    cout << ans << " "<<g<<" "<<x;
+    while ( m--) {
+        string s1,s2;
+        cin >> s1 >> s2;
+        mp[s1] = s2;
+    }
+    while (n--) {
+        string s3;
+        cin >> s3;
+        if (mp[s3].length() < s3.length()) {
+            cout << mp[s3] <<" ";
+        }
+        else {
+            cout << s3 <<" ";
+        }
+    }
     return 0;
 }
