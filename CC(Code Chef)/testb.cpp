@@ -15,25 +15,10 @@
 #define ss second
 #define mod 1000000007
 using namespace std;
-int main() {
-    SPEED
-    ll n, m, x, ans = INT_MIN, fans = INT_MAX;
-    cin >> n;
-    in( a,n)
-    for (ll i = 1; i < n-1; i++) {
-         ans = INT_MIN;
-        for (ll j = 1; j < n-1; j++) {
-
-            if (i==j) {
-                ans = max (ans, a[j+1] - a[j-1]);
-                j++;
-            } 
-            else ans = max (ans,a[j]-a[j-1]);
-            if(i==n-2) ans =max(ans,a[n-1]-a[n-3]);
-            else ans =max(ans,a[n-1]-a[n-2]);
-        }
-        fans =min(fans,ans);
-    }
-    cout << fans;
-    return 0;
+int main(){
+SPEED
+ll n,m,x,ans;
+cin>>n;
+cout << n;
+return 0;
 }
