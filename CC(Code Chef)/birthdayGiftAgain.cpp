@@ -23,36 +23,33 @@ while(t--) {
     ll n = 0, m = 0, x = 1, ans = 0;
     string s; cin >> s;
     ll len = 2;
-    //for(ll len = 2; len < )
+    ll *a = new ll[s.length() + 1];
+    ll *b = new ll[s.length() + 1];
+    if(s[0]=='0') {
+        b[0] = 1;
+        a[0] = 0;
+    }
+    else {
+        a[0] = 1;
+        b[0] = 0;
+    }
+    for(ll i = 1; i < s.length(); i++) {
+        a[i] = a[i-1];
+        b[i] = b[i-1];
+        if(s[i] == '0') b[i]++;
+        else a[i]++;
+    } 
     while(true) {
-        for(ll i = 0; i < len; i++) {
-            if(s[i] == '0') n++;
-            if(s[i] == '1') m++;
-        }
-        if(n == m*m) {
-                ans++;
-          //cout<<"1."<<endl;
-        }
-        // for(ll i = 1; i <= s.length() - len; i++) {
-        //     if(s[i-1] == '0') n--;
-        //     if(s[i-1] == '1') m--;
-        //     if(s[i+len-1] == '0') n++;
-        //     if(s[i+len-1] == '1') m++;
-        //     if(n == m*m) {
-        //         ans++;
-        //        // cout<<"2."<<endl;
-        //     }
-          for(ll i = len; i < s.length(); i++) {
+            if (b[len-1] = a[len-1]*a[len-1]) ans++;
+            n = b[len - 1];
+            m = a[len - 1];
+           for(ll i = len; i < s.length(); i++) {
             if(s[i-len] == '0') n--;
             if(s[i-len] == '1') m--;
             if(s[i] == '0') n++;
             if(s[i] == '1') m++;
-            if(n == m*m) {
-                ans++;
-               // cout<<"2."<<endl;
-            }
+            if(n == m*m) ans++;
         }
-        
         x++;
         len = x + (x*x); 
         if(len > s.length()) break;

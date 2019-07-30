@@ -1,35 +1,16 @@
-#include <iostream>
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
+#define ll long long 
 using namespace std;
 
 int main() {
-    int t;
-    cin>>t;
-    while(t--){
-        long x;
-        cin>>x;
-        long long int j = x*x ;
-        int ans=0;long long int sum=0;
-        long i=1;
-        while(1){
-             i=sqrt(sum)+1;
-             long k=i*i;
-            //if(sum < k ){
-                //cout<<"ndnd";
-                long temp = sum + k;
-                //cout<<temp<<endl;
-                if(j > temp){
-                    //cout<<sum<<endl;
-                    ans++;
-                    sum = temp;
-                }
-                else{
-                    break;
-                }
-            //}
-            //i++;
+    ll t; cin >> t;
+    while(t--) {
+        ll x, sum = 0, m = 1;
+        cin >> x;
+        while(sum < x*x) {
+            sum+=m*m;
+            m++;
         }
-        cout<<ans+1<<endl;
+        cout << m << "\n";
     }
-	return 0;
 }
