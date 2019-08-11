@@ -4,7 +4,7 @@ using namespace std;
         int t;
            int n , x;
             cin >> n >> x;
-            unordered_map<int.int> mp;
+            unordered_map<int,int> mp;
             int *arr = new int[n + 1];
             //int *brr = new int[n + 1];
             for (int  i = 0; i < n; i++) {
