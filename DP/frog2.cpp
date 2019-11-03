@@ -17,14 +17,19 @@
 using namespace std;
 int main()	{
 	SPEED
-	ll n,m,x,ans; 
-	cin >> n;
+	ll n,m,x; 
+	cin >> n >> x;
 	in(a,n)
 	ll* dp = new ll [n + 1];
 	dp[0] = 0;
 	dp[1] = abs(a[1] - a[0]);
 	for(ll i = 2; i < n; i++) {
-		dp[i] = min(dp[i-2] + abs(a[i] - a[i-2]), dp[i-1] + abs(a[i] - a[i-1]));
+		ll ans = INT_MAX;
+		for(ll j = 1; j <= x && i-j>=0;j++) {
+			ans = min(ans, dp[i-j] + abs(a[i] - a[i-j]));
+		}
+		dp[i] = ans;
+		//cout << dp[i] <<" ";
 	}
 	cout << dp[n-1];
 	return 0;
