@@ -1,25 +1,41 @@
 #include<bits/stdc++.h>
-#define pb push_back
-#define mp make_pair
-#define ll unsigned long long int
-#define fr for(ll i=0;i<n;++i)
-#define in(a,n) ll a[n];for(ll i=0;i<n;i++)cin>>a[i];
-#define print(a,n) for(ll i=0;i<n;i++)cout<<a[i]<<' ';br
-#define printv(v) vector<ll> :: iterator it;for(it=v.begin();it!=v.end();it++)cout<<*it<<' ';br
-#define print2(a,b) cout<<a<<' '<<b;br
-#define print3(a,b,c) cout<<a<<' '<<b<<' '<<c;br
-#define sum(a,n) ll sum=0;for(ll i=0;i<n;i++)sum+=a[i];
-#define br cout<<'\n';
-#define SPEED ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
-#define ff first
-#define ss second
-#define mod 1000000007
+#define ll long long int
 using namespace std;
 int main() {
-    SPEED
     ll t;
     cin>>t;
         while(t--) {
-            ll i,j,m,n,k,c,x,ans;
+            ll i,j,m,n,k,x,ans;
+            cin >> n;
+            ll a[n+1];
+            ll b[n+1];
+            ll c[n+1];
+            for(ll i = 0; i < n; i++) {
+                cin >> a[i];
+            }
+            if(n < 3) {
+                cout << "No\n";
+                continue;
+            }
+            x = a[0];
+            //b[0] = x;
+            for(ll i = 1;i < n; i++) {
+                x = min(x, a[i]);
+                b[i] = x;
+            }
+            x = a[n-1];
+            for(ll i = n - 2; i >= 0; i--) {
+                x = min(x, a[i]);
+                c[i] = x;
+            }
+            ll ok = 0;
+            for(ll i = 1; i < n - 1; i++) {
+                if(a[i] > b[i-1] && a[i] > c[i+1]) {
+                    ok = 1;
+                    break;
+                }
+            }
+            if(ok) cout << "Yes\n";
+            else cout << "No\n";
         }
 }

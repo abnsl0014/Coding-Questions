@@ -4,29 +4,20 @@ using namespace std;
 int main() {
     ll t;
     cin>>t;
-        while(t--) {
-            ll i,j,m,n,k = INT_MIN,x = INT_MIN,ans = 0;
-            ll k1, k2;
-            unordered_map<ll,ll>mp;
-            cin >> n ;
-            for(ll i = 0; i < k1; i++) {
-                cin >> m;
-                k = max(k, m);
-            } 
-            for(ll i = 0; i < k2; i++) {
-                cin >> m;
-                x = max(x, m);
-            } 
-            if(k > x) {
-                cout << "YES\n";
-            }
-            else {
-                cout << "NO\n";
-            }
-            // ll a[n+1]={};
-            // for(ll i = 0; i < n; i++) {
-            //     cin >> a[i];
-            // }
-
+    while(t--) {
+        ll n;
+        cin >> n;
+        ll a[n+1];
+        ll sum = 0, xor = 0;
+        for(ll i = 0; i < n; i++) {
+            cin >> a[i];
+            sum += a[i];
+            xor ^= a[i];
         }
+        if(sum == 2*xor) {
+            cout << 0 << "\n\n";
+        }
+        cout << 2 << "\n";
+        cout << xor << " " << sum + xor << "\n";
+    }
 }
