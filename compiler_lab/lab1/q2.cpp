@@ -23,7 +23,7 @@ bool match(string s1, string s2, ll i, ll j) {
     
     if(s1[i] == '*') {
         //cout <<"i and j are now" << i <<"and "<< j <<" \n";
-        return match(s1, s2, i, j+1) || match(s1, s2, i+1, j+1);
+        return match(s1, s2, i, j+1) || match(s1, s2, i+1, j);
     }
     else if(s1[i] == '?') {
         return match(s1, s2, i+1, j+1);
