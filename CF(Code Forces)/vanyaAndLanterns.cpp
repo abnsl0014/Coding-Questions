@@ -16,17 +16,26 @@
 #define mod 1000000007
 using namespace std;
 int main() {
-    SPEED
-    ll n, m, x;
-    double ans = INT_MIN;
-    cin >> n >> x;
-    in(a ,n)
-    sort ( a, a + n );
-    ans = max ( ans , a[0]);
-    ans = max ( ans , x - (double)a[n -1]);
-    for (int i = 0; i < n -1 ; i++) {
-        ans = max ( ans , ( a[i + 1] - a[i] )/2);
+    ll t;
+    cin >> t;
+    while(t--) {
+        ll n, d;
+        cin >> n >> d;
+        in(a, n)
+        ll ans = a[0];
+        for(ll i = 1; i < n; i++) {
+                for(ll j = 1; j <= a[i]; j++) {
+                    if(i > d) {
+                        break;
+                    }
+                    else {
+                        ans += 1;
+                    }
+                    d -= i;
+                }
+        }
+        cout << ans << "\n";
+
     }
-    cout << setprecision(10)<<ans;
-    return 0;
+
 }
